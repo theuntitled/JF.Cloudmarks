@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JF.Cloudmarks", "JF.Cloudmarks\JF.Cloudmarks.csproj", "{7C9E7712-7FBC-4207-82E7-D4EE45FCCBB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B335DDB1-A3F0-4097-84E9-B0C3DB6DED55}"
+	ProjectSection(SolutionItems) = preProject
+		app.settings.config = app.settings.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7C9E7712-7FBC-4207-82E7-D4EE45FCCBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C9E7712-7FBC-4207-82E7-D4EE45FCCBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C9E7712-7FBC-4207-82E7-D4EE45FCCBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C9E7712-7FBC-4207-82E7-D4EE45FCCBB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
