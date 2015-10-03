@@ -66,14 +66,14 @@ namespace JF.Cloudmarks {
 			app.UseMicrosoftAccountAuthentication( GetAppSetting( "MicrosoftClientId" ) ,
 												   GetAppSetting( "MicrosoftClientSecret" ) );
 
-			app.UseTwitterAuthentication( GetAppSetting( "TwitterConsumerKey" ) , GetAppSetting( "TwitterConsumerSecret" ) );
-
-			app.UseFacebookAuthentication( GetAppSetting( "FacebookAppId" ) , GetAppSetting( "FacebookAppSecret" ) );
-
 			app.UseGoogleAuthentication( new GoogleOAuth2AuthenticationOptions {
 				ClientId = GetAppSetting( "GoogleClientId" ) ,
 				ClientSecret = GetAppSetting( "GoogleClientSecret" )
 			} );
+
+			/*app.UseTwitterAuthentication( GetAppSetting( "TwitterConsumerKey" ) , GetAppSetting( "TwitterConsumerSecret" ) );
+
+			app.UseFacebookAuthentication( GetAppSetting( "FacebookAppId" ) , GetAppSetting( "FacebookAppSecret" ) );*/
 		}
 
 	}

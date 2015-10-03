@@ -364,9 +364,6 @@
     <Content Include="Content\src\scss\site.scss" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
