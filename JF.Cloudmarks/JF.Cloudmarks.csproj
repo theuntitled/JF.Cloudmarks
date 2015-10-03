@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,6 +218,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Bookmarks\Bookmark.cs" />
+    <Compile Include="Modules\Bookmarks\Directory.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ForgotPasswordViewModel.cs" />
@@ -253,8 +257,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dist\site.css" />
+    <Content Include="Content\dist\site.js" />
+    <Content Include="Content\img\theuntitled-128.png" />
+    <Content Include="Content\img\theuntitled-256.png" />
+    <Content Include="Content\lib\js\bootstrap\bootstrap.js" />
+    <Content Include="Content\lib\js\jquery\jquery-2.1.4.js" />
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
+    <Content Include="Gruntfile.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -266,8 +277,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -291,13 +300,77 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\dist\" />
-    <Folder Include="Content\lib\" />
-    <Folder Include="Content\src\" />
-    <Folder Include="Models\" />
+    <Folder Include="Content\src\scss\bootstrap\mixins\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\src\ts\Site.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\dist\site.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\src\scss\bootstrap\.csscomb.json" />
+    <Content Include="Content\src\scss\bootstrap\.scss-lint.yml" />
+    <Content Include="Content\src\scss\bootstrap\bootstrap-flex.scss" />
+    <Content Include="Content\src\scss\bootstrap\bootstrap-grid.scss" />
+    <Content Include="Content\src\scss\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="Content\src\scss\bootstrap\bootstrap.scss" />
+    <Content Include="Content\src\scss\bootstrap\_alert.scss" />
+    <Content Include="Content\src\scss\bootstrap\_animation.scss" />
+    <Content Include="Content\src\scss\bootstrap\_breadcrumb.scss" />
+    <Content Include="Content\src\scss\bootstrap\_button-group.scss" />
+    <Content Include="Content\src\scss\bootstrap\_buttons.scss" />
+    <Content Include="Content\src\scss\bootstrap\_card.scss" />
+    <Content Include="Content\src\scss\bootstrap\_carousel.scss" />
+    <Content Include="Content\src\scss\bootstrap\_close.scss" />
+    <Content Include="Content\src\scss\bootstrap\_code.scss" />
+    <Content Include="Content\src\scss\bootstrap\_custom-forms.scss" />
+    <Content Include="Content\src\scss\bootstrap\_dropdown.scss" />
+    <Content Include="Content\src\scss\bootstrap\_forms.scss" />
+    <Content Include="Content\src\scss\bootstrap\_grid.scss" />
+    <Content Include="Content\src\scss\bootstrap\_images.scss" />
+    <Content Include="Content\src\scss\bootstrap\_input-group.scss" />
+    <Content Include="Content\src\scss\bootstrap\_jumbotron.scss" />
+    <Content Include="Content\src\scss\bootstrap\_labels.scss" />
+    <Content Include="Content\src\scss\bootstrap\_list-group.scss" />
+    <Content Include="Content\src\scss\bootstrap\_media.scss" />
+    <Content Include="Content\src\scss\bootstrap\_mixins.scss" />
+    <Content Include="Content\src\scss\bootstrap\_modal.scss" />
+    <Content Include="Content\src\scss\bootstrap\_nav.scss" />
+    <Content Include="Content\src\scss\bootstrap\_navbar.scss" />
+    <Content Include="Content\src\scss\bootstrap\_normalize.scss" />
+    <Content Include="Content\src\scss\bootstrap\_pager.scss" />
+    <Content Include="Content\src\scss\bootstrap\_pagination.scss" />
+    <Content Include="Content\src\scss\bootstrap\_popover.scss" />
+    <Content Include="Content\src\scss\bootstrap\_print.scss" />
+    <Content Include="Content\src\scss\bootstrap\_progress.scss" />
+    <Content Include="Content\src\scss\bootstrap\_reboot.scss" />
+    <Content Include="Content\src\scss\bootstrap\_responsive-embed.scss" />
+    <Content Include="Content\src\scss\bootstrap\_tables.scss" />
+    <Content Include="Content\src\scss\bootstrap\_tooltip.scss" />
+    <Content Include="Content\src\scss\bootstrap\_type.scss" />
+    <Content Include="Content\src\scss\bootstrap\_utilities-responsive.scss" />
+    <Content Include="Content\src\scss\bootstrap\_utilities-spacing.scss" />
+    <Content Include="Content\src\scss\bootstrap\_utilities.scss" />
+    <Content Include="Content\src\scss\bootstrap\_variables.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\src\scss\site.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\dist\site.css.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -307,6 +380,22 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile>Content/dist/site.js</TypeScriptOutFile>
+    <TypeScriptOutDir>Content/dist/</TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot>Content/src/ts/</TypeScriptSourceRoot>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
