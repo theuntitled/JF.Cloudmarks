@@ -223,5 +223,6 @@ pip-log.txt
 packages/*
 
 app.settings.config
-JF.Cloudmarks/.sass-cache/*
-JF.Cloudmarks/node_modules/*
+*/.sass-cache/*
+*/node_modules/*
+*/dist/*

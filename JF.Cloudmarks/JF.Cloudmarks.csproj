@@ -257,15 +257,153 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\dist\site.css" />
+    <Content Include="Content\dist\components\accordion.css" />
+    <Content Include="Content\dist\components\accordion.js" />
+    <Content Include="Content\dist\components\accordion.min.css" />
+    <Content Include="Content\dist\components\accordion.min.js" />
+    <Content Include="Content\dist\components\ad.css" />
+    <Content Include="Content\dist\components\ad.min.css" />
+    <Content Include="Content\dist\components\api.js" />
+    <Content Include="Content\dist\components\api.min.js" />
+    <Content Include="Content\dist\components\breadcrumb.css" />
+    <Content Include="Content\dist\components\breadcrumb.min.css" />
+    <Content Include="Content\dist\components\button.css" />
+    <Content Include="Content\dist\components\button.min.css" />
+    <Content Include="Content\dist\components\card.css" />
+    <Content Include="Content\dist\components\card.min.css" />
+    <Content Include="Content\dist\components\checkbox.css" />
+    <Content Include="Content\dist\components\checkbox.js" />
+    <Content Include="Content\dist\components\checkbox.min.css" />
+    <Content Include="Content\dist\components\checkbox.min.js" />
+    <Content Include="Content\dist\components\comment.css" />
+    <Content Include="Content\dist\components\comment.min.css" />
+    <Content Include="Content\dist\components\container.css" />
+    <Content Include="Content\dist\components\container.min.css" />
+    <Content Include="Content\dist\components\dimmer.css" />
+    <Content Include="Content\dist\components\dimmer.js" />
+    <Content Include="Content\dist\components\dimmer.min.css" />
+    <Content Include="Content\dist\components\dimmer.min.js" />
+    <Content Include="Content\dist\components\divider.css" />
+    <Content Include="Content\dist\components\divider.min.css" />
+    <Content Include="Content\dist\components\dropdown.css" />
+    <Content Include="Content\dist\components\dropdown.js" />
+    <Content Include="Content\dist\components\dropdown.min.css" />
+    <Content Include="Content\dist\components\dropdown.min.js" />
+    <Content Include="Content\dist\components\embed.css" />
+    <Content Include="Content\dist\components\embed.js" />
+    <Content Include="Content\dist\components\embed.min.css" />
+    <Content Include="Content\dist\components\embed.min.js" />
+    <Content Include="Content\dist\components\feed.css" />
+    <Content Include="Content\dist\components\feed.min.css" />
+    <Content Include="Content\dist\components\flag.css" />
+    <Content Include="Content\dist\components\flag.min.css" />
+    <Content Include="Content\dist\components\form.css" />
+    <Content Include="Content\dist\components\form.js" />
+    <Content Include="Content\dist\components\form.min.css" />
+    <Content Include="Content\dist\components\form.min.js" />
+    <Content Include="Content\dist\components\grid.css" />
+    <Content Include="Content\dist\components\grid.min.css" />
+    <Content Include="Content\dist\components\header.css" />
+    <Content Include="Content\dist\components\header.min.css" />
+    <Content Include="Content\dist\components\icon.css" />
+    <Content Include="Content\dist\components\icon.min.css" />
+    <Content Include="Content\dist\components\image.css" />
+    <Content Include="Content\dist\components\image.min.css" />
+    <Content Include="Content\dist\components\input.css" />
+    <Content Include="Content\dist\components\input.min.css" />
+    <Content Include="Content\dist\components\item.css" />
+    <Content Include="Content\dist\components\item.min.css" />
+    <Content Include="Content\dist\components\label.css" />
+    <Content Include="Content\dist\components\label.min.css" />
+    <Content Include="Content\dist\components\list.css" />
+    <Content Include="Content\dist\components\list.min.css" />
+    <Content Include="Content\dist\components\loader.css" />
+    <Content Include="Content\dist\components\loader.min.css" />
+    <Content Include="Content\dist\components\menu.css" />
+    <Content Include="Content\dist\components\menu.min.css" />
+    <Content Include="Content\dist\components\message.css" />
+    <Content Include="Content\dist\components\message.min.css" />
+    <Content Include="Content\dist\components\modal.css" />
+    <Content Include="Content\dist\components\modal.js" />
+    <Content Include="Content\dist\components\modal.min.css" />
+    <Content Include="Content\dist\components\modal.min.js" />
+    <Content Include="Content\dist\components\nag.css" />
+    <Content Include="Content\dist\components\nag.js" />
+    <Content Include="Content\dist\components\nag.min.css" />
+    <Content Include="Content\dist\components\nag.min.js" />
+    <Content Include="Content\dist\components\popup.css" />
+    <Content Include="Content\dist\components\popup.js" />
+    <Content Include="Content\dist\components\popup.min.css" />
+    <Content Include="Content\dist\components\popup.min.js" />
+    <Content Include="Content\dist\components\progress.css" />
+    <Content Include="Content\dist\components\progress.js" />
+    <Content Include="Content\dist\components\progress.min.css" />
+    <Content Include="Content\dist\components\progress.min.js" />
+    <Content Include="Content\dist\components\rail.css" />
+    <Content Include="Content\dist\components\rail.min.css" />
+    <Content Include="Content\dist\components\rating.css" />
+    <Content Include="Content\dist\components\rating.js" />
+    <Content Include="Content\dist\components\rating.min.css" />
+    <Content Include="Content\dist\components\rating.min.js" />
+    <Content Include="Content\dist\components\reset.css" />
+    <Content Include="Content\dist\components\reset.min.css" />
+    <Content Include="Content\dist\components\reveal.css" />
+    <Content Include="Content\dist\components\reveal.min.css" />
+    <Content Include="Content\dist\components\search.css" />
+    <Content Include="Content\dist\components\search.js" />
+    <Content Include="Content\dist\components\search.min.css" />
+    <Content Include="Content\dist\components\search.min.js" />
+    <Content Include="Content\dist\components\segment.css" />
+    <Content Include="Content\dist\components\segment.min.css" />
+    <Content Include="Content\dist\components\shape.css" />
+    <Content Include="Content\dist\components\shape.js" />
+    <Content Include="Content\dist\components\shape.min.css" />
+    <Content Include="Content\dist\components\shape.min.js" />
+    <Content Include="Content\dist\components\sidebar.css" />
+    <Content Include="Content\dist\components\sidebar.js" />
+    <Content Include="Content\dist\components\sidebar.min.css" />
+    <Content Include="Content\dist\components\sidebar.min.js" />
+    <Content Include="Content\dist\components\site.css" />
+    <Content Include="Content\dist\components\site.js" />
+    <Content Include="Content\dist\components\site.min.css" />
+    <Content Include="Content\dist\components\site.min.js" />
+    <Content Include="Content\dist\components\state.js" />
+    <Content Include="Content\dist\components\state.min.js" />
+    <Content Include="Content\dist\components\statistic.css" />
+    <Content Include="Content\dist\components\statistic.min.css" />
+    <Content Include="Content\dist\components\step.css" />
+    <Content Include="Content\dist\components\step.min.css" />
+    <Content Include="Content\dist\components\sticky.css" />
+    <Content Include="Content\dist\components\sticky.js" />
+    <Content Include="Content\dist\components\sticky.min.css" />
+    <Content Include="Content\dist\components\sticky.min.js" />
+    <Content Include="Content\dist\components\tab.css" />
+    <Content Include="Content\dist\components\tab.js" />
+    <Content Include="Content\dist\components\tab.min.css" />
+    <Content Include="Content\dist\components\tab.min.js" />
+    <Content Include="Content\dist\components\table.css" />
+    <Content Include="Content\dist\components\table.min.css" />
+    <Content Include="Content\dist\components\transition.css" />
+    <Content Include="Content\dist\components\transition.js" />
+    <Content Include="Content\dist\components\transition.min.css" />
+    <Content Include="Content\dist\components\transition.min.js" />
+    <Content Include="Content\dist\components\visibility.js" />
+    <Content Include="Content\dist\components\visibility.min.js" />
+    <Content Include="Content\dist\semantic.css" />
+    <Content Include="Content\dist\semantic.js" />
+    <Content Include="Content\dist\semantic.min.css" />
+    <Content Include="Content\dist\semantic.min.js" />
     <Content Include="Content\dist\site.js" />
+    <Content Include="Content\dist\themes\basic\assets\fonts\icons.svg" />
+    <Content Include="Content\dist\themes\default\assets\fonts\icons.svg" />
+    <Content Include="Content\dist\themes\default\assets\images\flags.png" />
+    <Content Include="Content\dist\themes\github\assets\fonts\octicons.svg" />
     <Content Include="Content\img\theuntitled-128.png" />
     <Content Include="Content\img\theuntitled-256.png" />
     <Content Include="Content\lib\js\bootstrap\bootstrap.js" />
     <Content Include="Content\lib\js\jquery\jquery-2.1.4.js" />
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
-    <Content Include="Gruntfile.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -300,7 +438,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\src\scss\bootstrap\mixins\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -315,59 +453,19 @@
     <Content Include="Content\dist\site.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\src\scss\bootstrap\.csscomb.json" />
-    <Content Include="Content\src\scss\bootstrap\.scss-lint.yml" />
-    <Content Include="Content\src\scss\bootstrap\bootstrap-flex.scss" />
-    <Content Include="Content\src\scss\bootstrap\bootstrap-grid.scss" />
-    <Content Include="Content\src\scss\bootstrap\bootstrap-reboot.scss" />
-    <Content Include="Content\src\scss\bootstrap\bootstrap.scss" />
-    <Content Include="Content\src\scss\bootstrap\_alert.scss" />
-    <Content Include="Content\src\scss\bootstrap\_animation.scss" />
-    <Content Include="Content\src\scss\bootstrap\_breadcrumb.scss" />
-    <Content Include="Content\src\scss\bootstrap\_button-group.scss" />
-    <Content Include="Content\src\scss\bootstrap\_buttons.scss" />
-    <Content Include="Content\src\scss\bootstrap\_card.scss" />
-    <Content Include="Content\src\scss\bootstrap\_carousel.scss" />
-    <Content Include="Content\src\scss\bootstrap\_close.scss" />
-    <Content Include="Content\src\scss\bootstrap\_code.scss" />
-    <Content Include="Content\src\scss\bootstrap\_custom-forms.scss" />
-    <Content Include="Content\src\scss\bootstrap\_dropdown.scss" />
-    <Content Include="Content\src\scss\bootstrap\_forms.scss" />
-    <Content Include="Content\src\scss\bootstrap\_grid.scss" />
-    <Content Include="Content\src\scss\bootstrap\_images.scss" />
-    <Content Include="Content\src\scss\bootstrap\_input-group.scss" />
-    <Content Include="Content\src\scss\bootstrap\_jumbotron.scss" />
-    <Content Include="Content\src\scss\bootstrap\_labels.scss" />
-    <Content Include="Content\src\scss\bootstrap\_list-group.scss" />
-    <Content Include="Content\src\scss\bootstrap\_media.scss" />
-    <Content Include="Content\src\scss\bootstrap\_mixins.scss" />
-    <Content Include="Content\src\scss\bootstrap\_modal.scss" />
-    <Content Include="Content\src\scss\bootstrap\_nav.scss" />
-    <Content Include="Content\src\scss\bootstrap\_navbar.scss" />
-    <Content Include="Content\src\scss\bootstrap\_normalize.scss" />
-    <Content Include="Content\src\scss\bootstrap\_pager.scss" />
-    <Content Include="Content\src\scss\bootstrap\_pagination.scss" />
-    <Content Include="Content\src\scss\bootstrap\_popover.scss" />
-    <Content Include="Content\src\scss\bootstrap\_print.scss" />
-    <Content Include="Content\src\scss\bootstrap\_progress.scss" />
-    <Content Include="Content\src\scss\bootstrap\_reboot.scss" />
-    <Content Include="Content\src\scss\bootstrap\_responsive-embed.scss" />
-    <Content Include="Content\src\scss\bootstrap\_tables.scss" />
-    <Content Include="Content\src\scss\bootstrap\_tooltip.scss" />
-    <Content Include="Content\src\scss\bootstrap\_type.scss" />
-    <Content Include="Content\src\scss\bootstrap\_utilities-responsive.scss" />
-    <Content Include="Content\src\scss\bootstrap\_utilities-spacing.scss" />
-    <Content Include="Content\src\scss\bootstrap\_utilities.scss" />
-    <Content Include="Content\src\scss\bootstrap\_variables.scss" />
+    <Content Include="Views\Shared\_LayoutUnauthorized.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\src\scss\site.scss" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="package.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\dist\site.css.map" />
+    <Content Include="Content\dist\themes\basic\assets\fonts\icons.eot" />
+    <Content Include="Content\dist\themes\basic\assets\fonts\icons.ttf" />
+    <Content Include="Content\dist\themes\basic\assets\fonts\icons.woff" />
+    <Content Include="Content\dist\themes\default\assets\fonts\icons.eot" />
+    <Content Include="Content\dist\themes\default\assets\fonts\icons.ttf" />
+    <Content Include="Content\dist\themes\default\assets\fonts\icons.woff" />
+    <Content Include="Content\dist\themes\default\assets\fonts\icons.woff2" />
+    <Content Include="Content\dist\themes\github\assets\fonts\octicons-local.ttf" />
+    <Content Include="Content\dist\themes\github\assets\fonts\octicons.ttf" />
+    <Content Include="Content\dist\themes\github\assets\fonts\octicons.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -375,6 +473,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
@@ -425,6 +526,9 @@
     <Error Condition="!Exists('..\packages\JF.Build.Tasks.1.0.0\build\JF.Build.Tasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\JF.Build.Tasks.1.0.0\build\JF.Build.Tasks.targets'))" />
   </Target>
   <Import Project="..\packages\JF.Build.Tasks.1.0.0\build\JF.Build.Tasks.targets" Condition="Exists('..\packages\JF.Build.Tasks.1.0.0\build\JF.Build.Tasks.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy $(SolutionDir)JF.Cloudmarks.SemanticUI\dist $(ProjectDir)Content\dist /s /Y</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

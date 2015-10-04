@@ -1,0 +1,37 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.windows.button {
+	background-color: @microsoftBlue;
+}
+.ui.windows.buttons .button,
+.ui.windows.button {
+  background-color: @microsoftBlue;
+  color: @blueTextColor;
+  text-shadow: @blueTextShadow;
+  background-image: @coloredBackgroundImage;
+}
+.ui.windows.button {
+  box-shadow: @coloredBoxShadow;
+}
+.ui.windows.buttons .button:hover,
+.ui.windows.button:hover {
+  background-color: @microsoftBlueHover;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+}
+.ui.windows.buttons .button:active,
+.ui.windows.button:active {
+  background-color: @microsoftDown;
+  color: @blueTextColor;
+  text-shadow: @blueTextShadow;
+}
+.ui.windows.buttons .active.button,
+.ui.windows.buttons .active.button:active,
+.ui.windows.active.button,
+.ui.windows.button .active.button:active {
+  background-color: @microsoftActive;
+  color: @blueTextColor;
+  text-shadow: @blueTextShadow;
+}

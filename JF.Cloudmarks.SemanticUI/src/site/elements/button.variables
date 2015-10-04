@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@microsoftBlue:      #1570a6;
+@microsoftBlueHover: lighten(@microsoftBlue, 3);
+@microsoftDown:      darken(@blue, 7);
+@microsoftActive:    darken(@blue, 5);

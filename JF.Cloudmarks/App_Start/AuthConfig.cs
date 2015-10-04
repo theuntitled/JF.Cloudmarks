@@ -71,9 +71,9 @@ namespace JF.Cloudmarks {
 				ClientSecret = GetAppSetting( "GoogleClientSecret" )
 			} );
 
-			/*app.UseTwitterAuthentication( GetAppSetting( "TwitterConsumerKey" ) , GetAppSetting( "TwitterConsumerSecret" ) );
+			/*app.UseTwitterAuthentication( GetAppSetting( "TwitterConsumerKey" ) , GetAppSetting( "TwitterConsumerSecret" ) );*/
 
-			app.UseFacebookAuthentication( GetAppSetting( "FacebookAppId" ) , GetAppSetting( "FacebookAppSecret" ) );*/
+			app.UseFacebookAuthentication( GetAppSetting( "FacebookAppId" ) , GetAppSetting( "FacebookAppSecret" ) );
 		}
 
 	}

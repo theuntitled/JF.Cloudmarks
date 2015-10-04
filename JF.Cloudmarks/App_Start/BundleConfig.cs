@@ -5,9 +5,9 @@ namespace JF.Cloudmarks {
 	public class BundleConfig {
 
 		public static void RegisterBundles( BundleCollection bundles ) {
-			bundles.Add( new ScriptBundle( "~/bundles/scripts" ).Include( "~/Content/dist/site.js" ) );
+			bundles.Add( new ScriptBundle( "~/bundles/scripts" ).Include( "~/Content/dist/semantic.js" , "~/Content/dist/site.js" ) );
 
-			bundles.Add( new StyleBundle( "~/bundles/styles" ).Include( "~/Content/dist/site.css" ) );
+			bundles.Add( new StyleBundle( "~/bundles/styles" ).Include( "~/Content/dist/semantic.css" ) );
 		}
 
 	}

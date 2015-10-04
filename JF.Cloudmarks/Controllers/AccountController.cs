@@ -41,14 +41,14 @@ namespace JF.Cloudmarks.Controllers {
 
 			// This doesn't count login failures towards account lockout
 			// To enable password failures to trigger account lockout, change to shouldLockout: true
-			var result = await _signInManager.PasswordSignInAsync( model.Email , model.Password , model.RememberMe , false );
+			var result = await _signInManager.PasswordSignInAsync( model.Username , model.Password , model.RememberMe , false );
 			switch ( result ) {
 				case SignInStatus.Success:
 					return RedirectToLocal( returnUrl );
 				case SignInStatus.LockedOut:
 					return View( "Lockout" );
 				case SignInStatus.RequiresVerification:
-					return RedirectToAction( "SendCode" , new {ReturnUrl = returnUrl , model.RememberMe} );
+					return RedirectToAction( "SendCode" , new { ReturnUrl = returnUrl , model.RememberMe } );
 				default:
 					ModelState.AddModelError( "" , "Invalid login attempt." );
 					return View( model );
@@ -99,7 +99,7 @@ namespace JF.Cloudmarks.Controllers {
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Register( RegisterViewModel model ) {
 			if ( ModelState.IsValid ) {
-				var user = new ApplicationUser {UserName = model.Email , Email = model.Email};
+				var user = new ApplicationUser {UserName = model.Username , Email = model.Email};
 				var result = await _userManager.CreateAsync( user , model.Password );
 				if ( result.Succeeded ) {
 					await _signInManager.SignInAsync( user , false , false );
@@ -246,7 +246,11 @@ namespace JF.Cloudmarks.Controllers {
 					// If the user does not have an account, then prompt the user to create an account
 					ViewBag.ReturnUrl = returnUrl;
 					ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-					return View( "ExternalLoginConfirmation" , new ExternalLoginConfirmationViewModel {Email = loginInfo.Email} );
+
+					return View( "ExternalLoginConfirmation" , new ExternalLoginConfirmationViewModel {
+						Email = loginInfo.Email ,
+						Username = loginInfo.DefaultUserName
+					} );
 			}
 		}
 
@@ -264,10 +268,12 @@ namespace JF.Cloudmarks.Controllers {
 				if ( info == null ) {
 					return View( "ExternalLoginFailure" );
 				}
-				var user = new ApplicationUser {UserName = model.Email , Email = model.Email};
+				var user = new ApplicationUser { UserName = model.Username , Email = model.Email };
 				var result = await _userManager.CreateAsync( user );
+
 				if ( result.Succeeded ) {
 					result = await _userManager.AddLoginAsync( user.Id , info.Login );
+
 					if ( result.Succeeded ) {
 						await _signInManager.SignInAsync( user , false , false );
 						return RedirectToLocal( returnUrl );
