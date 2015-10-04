@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JF.AspNet.Identity.DocumentDB;
+using JF.Azure.DocumentDB;
+using JF.Cloudmarks.Modules.Identity;
+using JF.Cloudmarks.Modules.Models;
 
 namespace JF.Cloudmarks.Modules.Db {
-	public interface IDocumentManager {
+
+	public interface IDocumentManager : IIdentityCollectionManager<ApplicationUser> {
+
+		Collection<Directory> Directories { get; set; }
 
 	}
+
 }

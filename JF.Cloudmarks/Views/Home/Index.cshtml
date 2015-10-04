@@ -1,9 +1,99 @@
 ﻿@{
-	ViewBag.Title = "Home Page";
+	ViewBag.Title = "My Bookmarks";
 }
 
-<div class="row">
-	<div class="col-md-12">
-		<h2>Hallo Welt!</h2>
+<h2 class="ui header">
+	<i class="remove bookmark icon"></i>
+	<div class="content">
+		@ViewBag.Title
+		<div class="sub header">Manage your bookmarks</div>
+	</div>
+</h2>
+
+<div class="ui secondary large pointing menu">
+	<a class="item active" href="@Url.Action("Index", "Home")">
+		<i class="sitemap icon"></i>
+		View
+	</a>
+	<a class="item" href="@Url.Action("Import", "Home")">
+		<i class="cloud upload icon"></i>
+		Import
+	</a>
+	<a class="item" href="@Url.Action("Export", "Home")">
+		<i class="cloud download icon"></i>
+		Export
+	</a>
+</div>
+
+<div class="ui segment">
+	<div class="ui list">
+		<div class="item">
+			<i class="folder icon"></i>
+			<div class="content">
+				<div class="header">src</div>
+				<div class="list">
+					<div class="item">
+						<i class="file icon"></i>
+						<div class="content">
+							<div class="header">site</div>
+							<div class="description">Your site's theme</div>
+						</div>
+					</div>
+					<div class="item">
+						<i class="folder icon"></i>
+						<div class="content">
+							<div class="header">themes</div>
+							<div class="description">Packaged theme files</div>
+							<div class="list">
+								<div class="item">
+									<i class="folder icon"></i>
+									<div class="content">
+										<div class="header">default</div>
+										<div class="description">Default packaged theme</div>
+									</div>
+								</div>
+								<div class="item">
+									<i class="folder icon"></i>
+									<div class="content">
+										<div class="header">my_theme</div>
+										<div class="description">Packaged themes are also available in this folder</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<i class="file icon"></i>
+						<div class="content">
+							<div class="header">theme.config</div>
+							<div class="description">Config file for setting packaged themes</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<i class="folder icon"></i>
+			<div class="content">
+				<div class="header">dist</div>
+				<div class="description">Compiled css and js files</div>
+				<div class="list">
+					<div class="item">
+						<i class="folder icon"></i>
+						<div class="content">
+							<div class="header">components</div>
+							<div class="description">Individual component css and js</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<i class="file icon"></i>
+			<div class="content">
+				<div class="header">semantic.json</div>
+				<div class="description">Contains build settings for gulp</div>
+			</div>
+		</div>
 	</div>
 </div>

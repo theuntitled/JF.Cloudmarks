@@ -1,0 +1,55 @@
+﻿@model JF.Cloudmarks.Modules.Models.Directory
+@{
+	ViewBag.Title = "Bookmarks Import";
+}
+
+<h2 class="ui header">
+	<i class="remove bookmark icon"></i>
+	<div class="content">
+		@ViewBag.Title
+		<div class="sub header">Import bookmarks</div>
+	</div>
+</h2>
+
+<div class="ui secondary large pointing menu">
+	<a class="item" href="@Url.Action( "Index" , "Home" )">
+		<i class="sitemap icon"></i>
+		View
+	</a>
+	<a class="item active" href="@Url.Action( "Import" , "Home" )">
+		<i class="cloud upload icon"></i>
+		Import
+	</a>
+	<a class="item" href="@Url.Action( "Export" , "Home" )">
+		<i class="cloud download icon"></i>
+		Export
+	</a>
+</div>
+
+<div class="ui three attached steps">
+	<div class="completed step">
+		<i class="cloud upload icon"></i>
+		<div class="content">
+			<div class="title">Upload</div>
+			<div class="description">Choose your bookmarks file to import</div>
+		</div>
+	</div>
+	<div class="active step">
+		<i class="edit icon"></i>
+		<div class="content">
+			<div class="title">Edit</div>
+			<div class="description">Choose what and how you want to import</div>
+		</div>
+	</div>
+	<div class="disabled step">
+		<i class="check icon"></i>
+		<div class="content">
+			<div class="title">Import complete</div>
+			<div class="description">Your bookmarks are ready to sync</div>
+		</div>
+	</div>
+</div>
+
+<div class="ui attached segment">
+	<p>TODO</p>
+</div>

@@ -14,7 +14,21 @@
 		<a href="@Url.Action( "Index" , "Home" )" class="item">
 			<img src="/Content/img/theuntitled-128.png">
 		</a>
-		@Html.ActionLink( "Home" , "Index" , "Home" , new { area = "" } , new { @class = "item" } )
+
+		<a href="@Url.Action( "Index" , "Home" )" class="item">
+			<i class="remove bookmark icon"></i>
+			Bookmarks
+		</a>
+
+		<a href="@Url.Action( "Index" , "Tags" )" class="item">
+			<i class="tags icon"></i>
+			Tags
+		</a>
+
+		<a href="@Url.Action( "Index" , "Tags" )" class="item">
+			<i class="code icon"></i>
+			Get the extension
+		</a>
 
 		@Html.Partial( "_LoginPartial" )
 	</div>

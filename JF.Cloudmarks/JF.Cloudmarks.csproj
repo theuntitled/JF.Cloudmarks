@@ -218,8 +218,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Bookmarks\Bookmark.cs" />
-    <Compile Include="Modules\Bookmarks\Directory.cs" />
+    <Compile Include="Modules\Attributes\MaxFileSizeAttribute.cs" />
+    <Compile Include="Modules\Attributes\ValidFileExtensionsAttribute.cs" />
+    <Compile Include="Modules\Models\Bookmark.cs" />
+    <Compile Include="Modules\Models\Directory.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ForgotPasswordViewModel.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Modules\ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="Modules\ViewModels\Bookmark\Import.cs" />
     <Compile Include="Modules\ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="Modules\ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="Modules\ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -466,6 +469,12 @@
     <Content Include="Content\dist\themes\github\assets\fonts\octicons-local.ttf" />
     <Content Include="Content\dist\themes\github\assets\fonts\octicons.ttf" />
     <Content Include="Content\dist\themes\github\assets\fonts\octicons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Import.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ImportStepTwo.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
