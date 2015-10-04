@@ -9,20 +9,18 @@
 	@Styles.Render( "~/bundles/styles" )
 </head>
 <body>
-<nav class="navbar navbar-dark bg-primary navbar-fixed-top">
-	<div class="container">
-		@Html.ActionLink( "Cloudmarks" , "Index" , "Home" , new {area = ""} , new {@class = "navbar-brand"} )
-		<ul class="nav navbar-nav">
-			<li class="nav-item">
-				@Html.ActionLink( "Home" , "Index" , "Home" , new {area = ""} , new {@class = "nav-link"} )
-			</li>
-		</ul>
+<nav class="ui top fixed menu">
+	<div class="ui container">
+		<a href="@Url.Action( "Index" , "Home" )" class="item">
+			<img src="/Content/img/theuntitled-128.png">
+		</a>
+		@Html.ActionLink( "Home" , "Index" , "Home" , new { area = "" } , new { @class = "item" } )
 
 		@Html.Partial( "_LoginPartial" )
 	</div>
 </nav>
 
-<div class="container">
+<div class="ui container authorized">
 	@RenderBody()
 </div>
 

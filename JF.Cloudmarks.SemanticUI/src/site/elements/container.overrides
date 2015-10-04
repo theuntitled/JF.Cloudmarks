@@ -9,3 +9,7 @@
 		height: 100%;
 	}
 }
+
+.ui.container.authorized {
+	padding-top: 6em;
+}
