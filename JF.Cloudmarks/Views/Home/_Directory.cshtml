@@ -1,0 +1,34 @@
+﻿@model JF.Cloudmarks.Modules.Models.Directory
+
+@foreach ( var directory in Model.Directories ) {
+	<div class="item">
+		<i class="folder icon"></i>
+		<div class="content">
+			<div class="header">@directory.Name</div>
+			<div class="list">
+				@Html.Partial( "_Directory" , directory )
+			</div>
+		</div>
+	</div>
+}
+
+@foreach ( var bookmark in Model.Bookmarks ) {
+	<div class="item">
+		<i class="file icon"></i>
+		<div class="content">
+			<div class="header">
+				<div class="inline field">
+					<div class="ui checkbox">
+						<input type="checkbox" tabindex="0" class="hidden">
+						<label>@bookmark.Description</label>
+					</div>
+				</div>
+			</div>
+			@if ( !bookmark.Uri.StartsWith( "javascript:" ) ) {
+				<div class="description"><a href="@bookmark.Uri" target="_blank">@bookmark.Uri</a></div>
+			} else {
+				<div class="description"><a href="@bookmark.Uri">Javascript Scriptlet</a></div>
+			}
+		</div>
+	</div>
+}

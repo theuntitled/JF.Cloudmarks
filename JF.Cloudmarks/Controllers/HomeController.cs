@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using JF.Cloudmarks.Modules.Db;
 using JF.Cloudmarks.Modules.Models;
+using JF.Cloudmarks.Modules.Parser;
 using JF.Cloudmarks.Modules.ViewModels.Bookmark;
 using Microsoft.AspNet.Identity;
 using Directory = JF.Cloudmarks.Modules.Models.Directory;
@@ -17,8 +18,11 @@ namespace JF.Cloudmarks.Controllers {
 
 		private readonly IDocumentManager _documentManager;
 
-		public HomeController( IDocumentManager documentManager ) {
+		private readonly INetscapeBookmarkParser _bookmarkParser;
+
+		public HomeController( IDocumentManager documentManager , INetscapeBookmarkParser bookmarkParser ) {
 			_documentManager = documentManager;
+			_bookmarkParser = bookmarkParser;
 		}
 
 		public ActionResult Index() {
@@ -41,17 +45,11 @@ namespace JF.Cloudmarks.Controllers {
 			using ( var streamReader = new StreamReader( model.File.InputStream ) ) {
 				var fileContents = streamReader.ReadToEnd();
 
-				var directory = new Directory {
-					Name = "Import" ,
-					IsTemporary = true ,
-					LastUpdate = DateTime.Now ,
-					Bookmarks = new List<Bookmark>() ,
-					Directories = new List<Directory>() ,
-					CreatedById = User.Identity.GetUserId() ,
-					CreatedByName = User.Identity.GetUserName()
-				};
+				var directory = _bookmarkParser.ReadFile( fileContents );
 
-				// TODO: Read file contents and push it to the database as a temporary record
+				directory.IsTemporary = true;
+				directory.CreatedById = User.Identity.GetUserId();
+				directory.CreatedByName = User.Identity.GetUserName();
 
 				var result = await _documentManager.Directories.AddOrUpdateAsync( directory );
 

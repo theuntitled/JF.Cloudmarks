@@ -16,9 +16,9 @@ namespace JF.Cloudmarks.Modules.Models {
 
 		public string CreatedByName { get; set; }
 
-		public List<Bookmark> Bookmarks { get; set; }
+		public List<Bookmark> Bookmarks { get; set; } = new List<Bookmark>();
 
-		public List<Directory> Directories { get; set; }
+		public List<Directory> Directories { get; set; } = new List<Directory>();
 
 	}
 

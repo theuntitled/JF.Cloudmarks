@@ -58,6 +58,10 @@
       <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="JF.AspNet.Identity.DocumentDB, Version=1.0.7.39377, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\JF.AspNet.Identity.DocumentDB.1.0.7\lib\JF.AspNet.Identity.DocumentDB.dll</HintPath>
       <Private>True</Private>
@@ -222,6 +226,8 @@
     <Compile Include="Modules\Attributes\ValidFileExtensionsAttribute.cs" />
     <Compile Include="Modules\Models\Bookmark.cs" />
     <Compile Include="Modules\Models\Directory.cs" />
+    <Compile Include="Modules\Parser\INetscapeBookmarkParser.cs" />
+    <Compile Include="Modules\Parser\NetscapeBookmarkParser.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="Modules\ViewModels\Account\ForgotPasswordViewModel.cs" />
@@ -475,6 +481,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\ImportStepTwo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\_Directory.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

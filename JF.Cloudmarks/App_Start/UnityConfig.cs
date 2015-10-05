@@ -6,6 +6,7 @@ using JF.AspNet.Identity.DocumentDB;
 using JF.Cloudmarks.Modules.Db;
 using JF.Cloudmarks.Modules.Identity;
 using JF.Cloudmarks.Modules.Identity.MessageServices;
+using JF.Cloudmarks.Modules.Parser;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
@@ -57,6 +58,9 @@ namespace JF.Cloudmarks {
 			container.RegisterType<IUserManager , UserManager>( new PerRequestLifetimeManager() );
 			container.RegisterType<ISignInManager , SignInManager>( new PerRequestLifetimeManager() );
 			container.RegisterType( typeof (IDocumentDBUserStore<>) , typeof (DocumentDBUserStore<>) );
+
+			// Other types
+			container.RegisterType<INetscapeBookmarkParser , NetscapeBookmarkParser>();
 		}
 
 		#region Unity Container
