@@ -1,3 +1,8 @@
 /*******************************
          Site Overrides
 *******************************/
+
+.ui.menu > .ui.container {
+  border-right: 1px solid rgba(34, 36, 38, 0.1);
+}
+

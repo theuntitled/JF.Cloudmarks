@@ -2,6 +2,12 @@
 @{
 	ViewBag.Title = "Bookmarks Import";
 }
+@section scripts {
+	<script>
+		window.directoryTree = new Site.Bookmarks.DirectoryTree($(".ui.list[data-tree]"));
+		window.save = new Site.Bookmarks.Import.Save($(".ui.form"), "@Url.Action("ImportStepThree")", "@Model.Id");
+	</script>
+}
 
 <h2 class="ui header">
 	<i class="remove bookmark icon"></i>
@@ -12,18 +18,26 @@
 </h2>
 
 <div class="ui secondary large pointing menu">
-	<a class="item" href="@Url.Action( "Index" , "Home" )">
+	<a class="item" href="@Url.Action( "Index" , "Bookmarks" )">
 		<i class="sitemap icon"></i>
 		View
 	</a>
-	<a class="item active" href="@Url.Action( "Import" , "Home" )">
+	<a class="item active" href="@Url.Action( "Import" , "Bookmarks" )">
 		<i class="cloud upload icon"></i>
 		Import
 	</a>
-	<a class="item" href="@Url.Action( "Export" , "Home" )">
+	<a class="item" href="@Url.Action( "Export" , "Bookmarks" )">
 		<i class="cloud download icon"></i>
 		Export
 	</a>
+	<div class="right menu">
+		<a class="item" href="@Url.Action( "Stash" , "Bookmarks" )">
+			@Html.Action( "StashLink" )
+		</a>
+		<a class="item" href="@Url.Action( "RecycleBin" , "Bookmarks" )">
+			@Html.Action( "RecycleLink" )
+		</a>
+	</div>
 </div>
 
 <div class="ui three attached steps">
@@ -52,14 +66,13 @@
 
 <div class="ui attached segment">
 	<div class="ui form">
-		<div class="ui list">
-			@Html.Partial( "_Directory" , Model )
+		<div class="ui list" data-tree>
+			@Html.Partial( "_SelectableDirectory" , Model )
 		</div>
+
+		<button class="ui button" data-save>
+			<i class="cloud upload icon"></i>
+			Finish import
+		</button>
 	</div>
 </div>
-
-@section scripts {
-	<script>
-		$('.ui.checkbox').checkbox();
-	</script>
-}

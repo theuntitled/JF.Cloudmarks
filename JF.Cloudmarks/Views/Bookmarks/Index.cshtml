@@ -1,0 +1,53 @@
+﻿@model JF.Cloudmarks.Modules.Models.Directory
+@{
+	ViewBag.Title = "My Bookmarks";
+}
+@section scripts {
+	<script>
+		window.directoryTree = new Site.Bookmarks.DirectoryTree($(".ui.list[data-tree]"));
+	</script>
+}
+
+
+<h2 class="ui header">
+	<i class="remove bookmark icon"></i>
+	<div class="content">
+		@ViewBag.Title
+		<div class="sub header">Manage your bookmarks</div>
+	</div>
+</h2>
+
+<div class="ui secondary large pointing menu">
+	<a class="item active" href="@Url.Action( "Index" , "Bookmarks" )">
+		<i class="sitemap icon"></i>
+		View
+	</a>
+	<a class="item" href="@Url.Action( "Import" , "Bookmarks" )">
+		<i class="cloud upload icon"></i>
+		Import
+	</a>
+	<a class="item" href="@Url.Action( "Export" , "Bookmarks" )">
+		<i class="cloud download icon"></i>
+		Export
+	</a>
+	<div class="right menu">
+		<a class="item" href="@Url.Action( "Stash" , "Bookmarks" )">
+			@Html.Action( "StashLink" )
+		</a>
+		<a class="item" href="@Url.Action( "RecycleBin" , "Bookmarks" )">
+			@Html.Action( "RecycleLink" )
+		</a>
+	</div>
+</div>
+
+<div class="ui segment">
+	@if ( Model != null ) {
+		<div class="ui list" data-tree>
+			@Html.Partial( "_Directory" , Model )
+		</div>
+
+		<a href="@Url.Action("RecycleAll")" class="ui negative button">Move to recycle bin</a>
+	} else {
+		<p>You currently have no synchronized cloud bookmarks.</p>
+	}
+</div>

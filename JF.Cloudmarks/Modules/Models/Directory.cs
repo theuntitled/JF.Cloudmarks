@@ -16,6 +16,10 @@ namespace JF.Cloudmarks.Modules.Models {
 
 		public string CreatedByName { get; set; }
 
+		public DateTime? DeletedAt { get; set; }
+
+		public bool IsDeleted { get; set; }
+
 		public List<Bookmark> Bookmarks { get; set; } = new List<Bookmark>();
 
 		public List<Directory> Directories { get; set; } = new List<Directory>();

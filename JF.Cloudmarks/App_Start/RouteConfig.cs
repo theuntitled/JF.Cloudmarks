@@ -12,7 +12,7 @@ namespace JF.Cloudmarks {
 
 			routes.MapRoute( "Default" ,
 							 "{controller}/{action}/{id}" ,
-							 new {controller = "Home" , action = "Index" , id = UrlParameter.Optional}
+							 new {controller = "Bookmarks" , action = "Index" , id = UrlParameter.Optional}
 				);
 		}
 

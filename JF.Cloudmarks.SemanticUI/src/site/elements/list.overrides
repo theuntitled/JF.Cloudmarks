@@ -1,3 +1,33 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+
+
+/* Checkbox */
+.ui.list .list > .item > .ui.checkbox,
+.ui.list > .item > .ui.checkbox {
+  display: table-cell;
+  background-color: transparent;
+  margin: 0em;
+  vertical-align: @imageAlign;
+}
+.ui.list .list > .item > .ui.checkbox:not(:only-child),
+.ui.list > .item > .ui.checkbox:not(:only-child) {
+  padding-left: 0.7em;
+  padding-right: 0;
+}
+
+.ui.list .list > .item > img.ui.checkbox,
+.ui.list .list > .item > .ui.checkbox:only-child,
+.ui.list > .item > img.ui.checkbox,
+.ui.list > .item > .ui.checkbox:only-child {
+  display: inline-block;
+}
+
+.ui.list .list > .item > .ui.checkbox + .content,
+.ui.list > .item > .ui.checkbox + .content {
+  display: table-cell;
+  padding: 0em 0em 0em @contentDistance;
+  vertical-align: @contentVerticalAlign;
+}

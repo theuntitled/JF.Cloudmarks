@@ -3,6 +3,12 @@
 	ViewBag.Title = "Bookmarks Import";
 }
 
+@section scripts {
+	<script>
+		window.upload = new Site.Bookmarks.Import.Upload($(".ui.form"), $(".ui.progress"), $(".ui.dimmer"));
+	</script>
+}
+
 <h2 class="ui header">
 	<i class="remove bookmark icon"></i>
 	<div class="content">
@@ -12,18 +18,26 @@
 </h2>
 
 <div class="ui secondary large pointing menu">
-	<a class="item" href="@Url.Action( "Index" , "Home" )">
+	<a class="item" href="@Url.Action( "Index" , "Bookmarks" )">
 		<i class="sitemap icon"></i>
 		View
 	</a>
-	<a class="item active" href="@Url.Action( "Import" , "Home" )">
+	<a class="item active" href="@Url.Action( "Import" , "Bookmarks" )">
 		<i class="cloud upload icon"></i>
 		Import
 	</a>
-	<a class="item" href="@Url.Action( "Export" , "Home" )">
+	<a class="item" href="@Url.Action( "Export" , "Bookmarks" )">
 		<i class="cloud download icon"></i>
 		Export
 	</a>
+	<div class="right menu">
+		<a class="item" href="@Url.Action( "Stash" , "Bookmarks" )">
+			@Html.Action( "StashLink" )
+		</a>
+		<a class="item" href="@Url.Action( "RecycleBin" , "Bookmarks" )">
+			@Html.Action( "RecycleLink" )
+		</a>
+	</div>
 </div>
 
 <div class="ui three attached steps">
@@ -51,7 +65,11 @@
 </div>
 
 <div class="ui attached segment">
-	@using ( Html.BeginForm( "Import" , "Home" , FormMethod.Post , new {@class = "ui form" , enctype = "multipart/form-data"} ) ) {
+	<div class="ui inverted dimmer" data-loader>
+		<div class="ui indeterminate small text loader">Processing data...</div>
+	</div>
+
+	@using ( Html.BeginForm( "Import" , "Bookmarks" , FormMethod.Post , new {@class = "ui form" , enctype = "multipart/form-data"} ) ) {
 		@Html.AntiForgeryToken()
 
 		<div class="field">
@@ -63,4 +81,9 @@
 
 		<button type="submit" class="ui large submit button">Upload</button>
 	}
+
+	<div class="ui indicating progress active transition hidden" data-percent="0">
+		<div class="bar" style="transition-duration: 300ms; width: 0;"></div>
+		<div class="label">0% uploaded</div>
+	</div>
 </div>

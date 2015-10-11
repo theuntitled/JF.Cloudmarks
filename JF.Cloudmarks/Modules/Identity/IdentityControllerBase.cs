@@ -22,7 +22,7 @@ namespace JF.Cloudmarks.Modules.Identity {
 				return Redirect( returnUrl );
 			}
 
-			return RedirectToAction( "Index" , "Home" );
+			return RedirectToAction( "Index" , "Bookmarks" );
 		}
 
 	}

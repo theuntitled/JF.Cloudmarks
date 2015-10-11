@@ -110,7 +110,7 @@ namespace JF.Cloudmarks.Controllers {
 					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
 					// await _userManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-					return RedirectToAction( "Index" , "Home" );
+					return RedirectToAction( "Index" , "Bookmarks" );
 				}
 
 				AddErrors( result );
@@ -291,7 +291,7 @@ namespace JF.Cloudmarks.Controllers {
 		[ValidateAntiForgeryToken]
 		public ActionResult LogOff() {
 			AuthenticationManager.SignOut( DefaultAuthenticationTypes.ApplicationCookie );
-			return RedirectToAction( "Index" , "Home" );
+			return RedirectToAction( "Index" , "Bookmarks" );
 		}
 
 		[AllowAnonymous]

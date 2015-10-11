@@ -33,7 +33,7 @@ namespace JF.Cloudmarks.Modules.Parser {
 
 			var document = HtmlNode.CreateNode( string.Join( string.Empty , lines ) );
 
-			return ReadNode( "Root" , document.ChildNodes );
+			return ReadNode( HtmlNode.CreateNode( "<h3>Root</h3>" ) , document.ChildNodes );
 		}
 
 		protected string PrepareLine( string line ) {
@@ -47,14 +47,16 @@ namespace JF.Cloudmarks.Modules.Parser {
 			return line;
 		}
 
-		protected Directory ReadNode( string directoryName , HtmlNodeCollection childNodes ) {
+		protected Directory ReadNode( HtmlNode directoryNode , HtmlNodeCollection childNodes ) {
 			var directory = new Directory {
-				Name = directoryName
+				Id = Guid.NewGuid().ToString() ,
+				Name = directoryNode.InnerText ,
+				LastUpdate = RetrieveToDateTime( directoryNode , "" )
 			};
 
 			foreach ( var childNode in childNodes ) {
 				if ( childNode.Name == "div" ) {
-					directory.Directories.Add( ReadNode( childNode.ChildNodes[0].InnerText , childNode.ChildNodes[1].ChildNodes ) );
+					directory.Directories.Add( ReadNode( childNode.ChildNodes[0] , childNode.ChildNodes[1].ChildNodes ) );
 				}
 
 				if ( childNode.Name == "a" ) {
@@ -72,11 +74,11 @@ namespace JF.Cloudmarks.Modules.Parser {
 			return directory;
 		}
 
-		protected DateTime? RetrieveToDateTime( HtmlNode node , string attribute ) {
+		protected DateTime RetrieveToDateTime( HtmlNode node , string attribute ) {
 			var value = node.GetAttributeValue( attribute , string.Empty );
 
 			if ( string.IsNullOrEmpty( value ) ) {
-				return null;
+				return DateTime.Now;
 			}
 
 			var epoch = new DateTime( 1970 , 1 , 1 , 0 , 0 , 0 );
